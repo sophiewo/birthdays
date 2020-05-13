@@ -2,16 +2,22 @@
 class BirthdayList
 
   def initialize
-    birthday_list = []
+    @birthday_list = []
   end
 
   def add_name(name, birthday)
-    birthday_list = []
-    birthday_list << {name: "Sophie", birthday: "07.08.1991"}
-    p birthday_list
+    @birthday_list << {name: name, birthday: birthday}
+  end
+
+  def print_names
+    @birthday_list.each do |value|
+    return "The birthday of my friend #{value[:name]} is #{value[:birthday]}"
+    end
   end
 end
 
-# def print_names
+bday = BirthdayList.new
+bday.add_name("Claire", "12.04.90")
+bday.add_name("Bob", "15.12.90")
 
-# def check_date
+p bday.print_names
